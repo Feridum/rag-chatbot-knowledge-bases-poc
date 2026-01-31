@@ -1,10 +1,10 @@
 # RAG Chat with S3 Vectors
 
-A production-ready chatbot built with **Vercel AI SDK**, **AI Elements**, and **AWS Bedrock Knowledge Base** using S3 Vectors for RAG (Retrieval-Augmented Generation).
+A PoC chatbot built with **Vercel AI SDK**, **AI Elements**, and **AWS Bedrock Knowledge Base** using S3 Vectors for RAG (Retrieval-Augmented Generation).
 
 ## Features
 
-- 🤖 **AI-Powered Chat** - Uses Claude 3.5 Sonnet via AWS Bedrock
+- 🤖 **AI-Powered Chat** - Uses AWS Bedrock models
 - 📚 **RAG Implementation** - Retrieves relevant context from S3 Vectors knowledge base
 - 🎨 **Beautiful UI** - Styled with AI Elements components
 - ⚡ **Streaming Responses** - Real-time streaming with Vercel AI SDK
@@ -21,7 +21,7 @@ A production-ready chatbot built with **Vercel AI SDK**, **AI Elements**, and **
 ## Architecture
 
 ```
-User Query → Frontend (useChat) → API Route → Generate Embeddings (Bedrock) → Query S3 Vectors → Retrieve Documents (S3) → Claude 3.5 Sonnet → Stream Response
+User Query → Frontend (useChat) → API Route → Generate Embeddings (Bedrock) → Query S3 Vectors → Retrieve Documents (S3) → AI Model → Stream Response
 ```
 
 The chatbot directly queries S3 Vectors at runtime. The setup script uses a Bedrock Knowledge Base only for ingestion (chunking + embedding) and writes vectors to S3 Vectors.
